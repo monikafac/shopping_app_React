@@ -43,9 +43,7 @@ value:'',
 addItem=(e)=>{
   e.preventDefault();
   let valueNumber= e.target.value;
-  // this.setState({
-  //  value: valueNumber,
-  // })
+  
 
   if(valueNumber==="0"){
     if(this.state.avaliable_apples>=30){
@@ -85,39 +83,34 @@ removeItem=(e)=>{
    value: valueNumber,
   })
 
-  if(this.state.value==="0"){
-    // if(this.state.avaliable_apples<=30){
-    //   this.setState({
-    //     avaliable_apples: this.state.avaliable_apples - 1,
-    //   })
-    // }else if (this.state.avaliable_apples===0){
-    //    alert("niewystarczająca liczba jablek")    
-    // console.log("jablka" + this.state.avaliable_apples)}
-    console.log("aaa")
+  if(valueNumber==="0"){
+    if (this.state.avaliable_apples===0){
+       alert("niewystarczająca liczba jablek")    
+  } else{
+    this.setState({
+      avaliable_apples: this.state.avaliable_apples - 1,
+    })
+  }
+    
   }
   
-  else if(this.state.value==="1"){
-    // if(this.state.avaliable_milk<=10){
-    //   this.setState({
-    //     avaliable_milk: this.state.avaliable_milk - 1,
-    //   })
-    //   console.log("mleko" + this.state.avaliable_milk)
-    //     } else  if (this.state.avaliable_milk===0) {
-     
-    //   console.log("niewystarczajaca ilosc mleka")
-    // }
-    console.log("b")
+  else if(valueNumber==="1"){
+    if (this.state.avaliable_milk===0){
+      alert("niewystarczająca ilosc mleka")    
+ } else{
+   this.setState({
+     avaliable_milk: this.state.avaliable_milk - 1,
+   })
+ }
   }
-     else if(this.state.value==="2"){
-      //  if(this.state.avaliable_carrot<=50){
-      //   this.setState({
-      //     avaliable_carrot: this.state.avaliable_carrot + 1,
-      //   })       }
-      //   else  if (this.state.avaliable_carrot===0){
-        
-      //   console.log("niewystarczajaca ilosc marchewki")
-      //  }
-   console.log("ce")
+     else if(valueNumber==="2"){
+      if (this.state.avaliable_carrot===0){
+        alert("niewystarczająca liczba marchewek")    
+   } else{
+     this.setState({
+       avaliable_carrot: this.state.avaliable_carrot - 1,
+     })
+   }
   
 }
 }
